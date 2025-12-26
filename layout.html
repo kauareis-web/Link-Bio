@@ -2,98 +2,151 @@
 <html lang="pt-br">
 
 <head>
+    <!-- ================= META TAGS ================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaua.Reis | Link-Bio</title>
+
+    <!-- ================= ESTILOS ================= -->
     <link rel="stylesheet" href="style.css">
-    <!-- Fontes sugeridas para o estilo -->
+
+    <!-- ================= FONTES (GOOGLE FONTS) ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
+<body id="dynamic-bg">
+    <!-- ================= CONTAINER PRINCIPAL ================= -->
     <div class="container">
+
+        <!-- ================= CABEÇALHO / PERFIL ================= -->
         <header>
-            <div class="share-icon">
-                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            <!-- Botão de compartilhar -->
+            <div class="compartilhar-icon" id="btnCompartilhar" role="button" aria-label="Compartilhar">
+                <img src="Img/IconBotão/Botão compartilhar.svg" alt="Compartilhar">
             </div>
+
+            <!-- Avatar do usuário -->
             <div class="avatar">
-                <!-- Substitua pelo caminho da sua imagem -->
-                <img src="Img/IlustraçãoPerfil/PerfilTemaEscuro.svg" alt="Avatar Kauã Reis">
+                <img src="Img/IlustraçãoPerfil/PerfilTemaEscuro.svg" alt="Foto de perfil de Kauã Reis">
             </div>
-            <div class="titulo1">
-                <img src="Img/Tipografia/Titulo 1.svg" alt="Titulo, meu nome e função">
-            </div>
+
+            <!-- Título principal -->
+            <h1 class="titulo1">
+                <img src="Img/Tipografia/Titulo 1.svg" alt="Kauã Reis - UX/UI e Web Design">
+            </h1>
+
+            <!-- Descrição / Bio -->
             <p class="descrição">
-                Inovação em cada pixel. Meu compromisso é com a criação de interfaces que não apenas funcionam, mas que
-                são intuitivas e gerem resultados reais para o seu negócio. O futuro do seu projeto começa aqui. Confira
-                abaixo as ferramentas que utilizo para transformar ideias em realidade.
+                Inovação em cada pixel. Meu compromisso é com a criação de interfaces que não apenas funcionam,
+                mas que são intuitivas e gerem resultados reais para o seu negócio.
             </p>
         </header>
 
-        <section class="habilidades">
-            <div class="habilidades-icons">
-                <div class="icons"><img src="Img/IconHabilidades/Affinity.svg" alt=""></div>
-                <div class="icons"><img src="Img/IconHabilidades/Figma.svg" alt=""></div>
-                <div class="icons"><img src="Img/IconHabilidades/Bootstrap.svg" alt=""></div>
-                <div class="icons"><img src="Img/IconHabilidades/Html.svg" alt=""></div>
-                <div class="icons"><img src="Img/IconHabilidades/Css.svg" alt=""></div>
-                <div class="icons"><img src="Img/IconHabilidades/Javascript.svg" alt=""></div>
-                <div class="icons"><img src="Img/IconHabilidades/Python.svg" alt=""></div>
-            </div>
-            <div class="Divisores">
-                <img src="Img/ElementoGrafico.svg" alt="Divisor Estrela">
+        <!-- ================= SEÇÃO DE HABILIDADES ================= -->
+        <section class="habilidades" aria-labelledby="habilidades-titulo">
+            <h2 id="habilidades-titulo" class="sr-only">Minhas Habilidades</h2>
+
+            <!-- Ícones das habilidades -->
+            <ul class="habilidades-icons">
+                <li class="icons"><img src="Img/IconHabilidades/Affinity.svg" alt="Affinity"></li>
+                <li class="icons"><img src="Img/IconHabilidades/Figma.svg" alt="Figma"></li>
+                <li class="icons"><img src="Img/IconHabilidades/Bootstrap.svg" alt="Bootstrap"></li>
+                <li class="icons"><img src="Img/IconHabilidades/Html.svg" alt="HTML5"></li>
+                <li class="icons"><img src="Img/IconHabilidades/Css.svg" alt="CSS3"></li>
+                <li class="icons"><img src="Img/IconHabilidades/Javascript.svg" alt="JavaScript"></li>
+                <li class="icons"><img src="Img/IconHabilidades/Python.svg" alt="Python"></li>
+            </ul>
+
+            <!-- Divisor gráfico -->
+            <div class="Divisores" aria-hidden="true">
+                <img src="Img/ElementoGrafico.svg" alt="">
             </div>
         </section>
 
+        <!-- ================= LINKS / REDES SOCIAIS ================= -->
         <main class="links">
-            <a href="#" class="link-card">
-                <div class="icon-link"><img src="Img/IconBotão/Portifolio.svg" alt=""></div>
-                <span class="descrição-link">Meu Portfólio</span>
-            </a>
-            <a href="https://www.behance.net/kaureis5" class="link-card">
-                <div class="icon-link"><img src="Img/IconBotão/Behance.svg" alt=""></div>
-                <span class="descrição-link">Perfil do Behance</span>
-            </a>
-            <a href="https://github.com/kauareis-web" class="link-card">
-                <div class="icon-link"><img src="Img/IconBotão/Github.svg" alt=""></div>
-                <span class="descrição-link">Perfil do Github</span>
-            </a>
-            <a href="https://www.linkedin.com/in/kauareisgarcia/" class="link-card">
-                <div class="icon-link"><img src="Img/IconBotão/Linkedin.svg" alt=""></div>
-                <span class="descrição-link">Perfil do Linkedin</span>
-            </a>
+            <nav aria-label="Links sociais e portfólio">
+
+                <!-- Portfólio -->
+                <a href="erro.html" class="link-card">
+                    <div class="icon-link">
+                        <img src="Img/IconBotão/Portifolio.svg" alt="" aria-hidden="true">
+                    </div>
+                    <span class="descrição-link">Meu Portfólio</span>
+                </a>
+
+                <!-- Behance -->
+                <a href="https://www.behance.net/kaureis5" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon-link">
+                        <img src="Img/IconBotão/Behance.svg" alt="" aria-hidden="true">
+                    </div>
+                    <span class="descrição-link">Perfil do Behance</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/kauareis-web" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon-link">
+                        <img src="Img/IconBotão/Github.svg" alt="" aria-hidden="true">
+                    </div>
+                    <span class="descrição-link">Perfil do Github</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/kauareisgarcia/" class="link-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="icon-link">
+                        <img src="Img/IconBotão/Linkedin.svg" alt="" aria-hidden="true">
+                    </div>
+                    <span class="descrição-link">Perfil do Linkedin</span>
+                </a>
+            </nav>
         </main>
 
-        <div class="Divisores">
-            <img src="Img/ElementoGrafico.svg" alt="Divisor Estrela">
+        <!-- ================= DIVISOR ================= -->
+        <div class="Divisores" aria-hidden="true">
+            <img src="Img/ElementoGrafico.svg" alt="">
         </div>
 
-        <section class="cta-section">
+        <!-- ================= CALL TO ACTION / CONTATO ================= -->
+        <section class="cta-section" aria-labelledby="cta-titulo">
+
+            <!-- Título da seção -->
             <div class="titulo2">
-                <img src="Img/Tipografia/Titulo 2.svg" alt="Titulo, meu nome e função">
+                <img src="Img/Tipografia/Titulo 2.svg" alt="Vamos trabalhar juntos?">
             </div>
-            <div class="card-contato">
+
+            <!-- Card de contato -->
+            <article class="card-contato">
                 <div class="texto-contato">
-                    <h3>Falar com o Kauã sobre ux/ui e web design</h3>
+                    <h2 id="cta-titulo">Falar com o Kauã sobre UX/UI e Web Design</h2>
+
+                    <!-- Botão WhatsApp -->
                     <a href="https://wa.me/556194215384?text=Olá!%20Gostaria%20de%20falar%20sobre%20um%20projeto%20de%20UX/UI%20e%20desenvolvimento%20web.%20Podemos%20conversar?"
-                        
-                    class="btn-whatsapp">
-                        <img src="Img/IconBotão/Whatsapp.svg" alt=""> Iniciar conversa
+                        class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <img src="Img/IconBotão/Whatsapp.svg" alt="" aria-hidden="true">
+                        Iniciar conversa
                     </a>
                 </div>
+
+                <!-- Avatar de contato -->
                 <div class="contato-avatar">
-                    <img src="Img/IlustraçãoPerfil/PerfilTemaClaro.svg" alt="Avatar Contato">
+                    <img src="Img/IlustraçãoPerfil/PerfilTemaClaro.svg" alt="Avatar para contato">
                 </div>
-            </div>
+            </article>
         </section>
 
+        <!-- ================= RODAPÉ ================= -->
         <footer>
             <p>&copy; 2025, Kauã dos Reis Garcia. Todos os direitos reservados</p>
         </footer>
+
     </div>
+
+    <!-- ================= SCRIPT JS ================= -->
+    <script src="script.js"></script>
 </body>
 
 </html>

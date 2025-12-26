@@ -1,232 +1,347 @@
+/* =====================================================
+   CSS Final - Kaua.Reis | Link-Bio
+   Suporte para Carrossel e Fundo Dinâmico
+===================================================== */
+
+/* =====================================================
+   VARIÁVEIS GLOBAIS
+===================================================== */
 :root {
-    --bg-color: #01426B;
+    --bg-color-1: #005387;
+    --bg-color-2: #00416A;
+    --bg-color-3: #00304E;
     --text-color: #ffffff;
     --card-bg: #ffffff;
     --card-text: #01426B;
-    --accent-color: #ffffff;
+    --accent-color: #f0f0f0;
     --font-main: 'Open Sans', sans-serif;
-    --font-title: 'Open Sans', sans-serif;
 }
 
+/* =====================================================
+   RESET CSS
+===================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =====================================================
+   BODY / BACKGROUND GLOBAL
+===================================================== */
 body {
-    background-color: var(--bg-color);
-    background: linear-gradient(to top right, #00446e, #00304E);
+    /* Background controlado via JS (fallback em CSS) */
+    background: linear-gradient(-45deg,
+            var(--bg-color-1),
+            var(--bg-color-2),
+            var(--bg-color-3),
+            var(--bg-color-2));
+    background-size: 300% 300%;
     color: var(--text-color);
     font-family: var(--font-main);
     display: flex;
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
+    /* Evita scroll horizontal do carrossel */
 }
 
+/* =====================================================
+   CONTAINER PRINCIPAL
+===================================================== */
 .container {
     width: 100%;
     max-width: 450px;
     text-align: center;
-    position: relative;
+    z-index: 1;
 }
 
+/* =====================================================
+   HEADER / PERFIL
+===================================================== */
 header {
     margin-bottom: 30px;
 }
 
-.avatar {
-    margin: 0 auto 25px;
-}
-
-.avatar img {
-    width: 45%;
+/* Botão compartilhar */
+.compartilhar-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
     height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
+/* Avatar */
+.avatar img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* =====================================================
+   TÍTULO E DESCRIÇÃO
+===================================================== */
 .titulo1 {
-    width: 80%;
-    margin: 0 auto 25px;
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.titulo1 img {
+    width: 75%;
 }
 
 .descrição {
-    font-size: 14px;
-    line-height: 1.5;
-    max-width: 400px;
-    margin: 0 auto 30px;
-    padding: 0 15px;
-    font-weight: 400;
-    text-align: center;
-}
-
-.habilidades {
+    font-size: 0.9rem;
     margin-bottom: 30px;
+    padding: 0 1px;
 }
 
+/* =====================================================
+   HABILIDADES (ÍCONES)
+===================================================== */
 .habilidades-icons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
     gap: 15px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    border: none;
 }
 
 .icons {
-    width: 40px;
-    height: 40px;
-    background: #ffffff;
-    color: var(--bg-color);
+    width: 30px;
+    height: 30px;
+    background: var(--card-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
+/* =====================================================
+   DIVISORES VISUAIS
+===================================================== */
 .Divisores {
+    margin: 20px 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 20px 0 30px;
 }
 
-.links {
+.Divisores img {
+    width: 1000px;
+    margin-bottom: 20px;
+}
+
+/* =====================================================
+   LINKS / BOTÕES DE NAVEGAÇÃO
+===================================================== */
+.links nav {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     margin-bottom: 40px;
 }
 
 .link-card {
-    background-color: var(--card-bg);
+    background: var(--card-bg);
     color: var(--card-text);
     text-decoration: none;
-    padding: 8px 10px;
+    padding: 9px 20px;
     border-radius: 50px;
     display: flex;
     align-items: center;
     font-weight: 700;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s;
 }
 
 .link-card:hover {
-    transform: scale(1.02);
-    background-color: #f0f0f0;
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.301);
 }
 
+/* Ícone do link */
 .icon-link {
-    width: 35px;
-    height: auto;
-    border-radius: 50%;
+    width: 30px;
+    margin-right: 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-right: center;
-    font-size: 0.7rem;
-    font-weight: 900;
-    text-transform: uppercase;
+}
+
+.icon-link img {
+    width: 100%;
 }
 
 .descrição-link {
-    padding: 0 125px;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.titulo2 {
-    width: 75%;
-    margin: 0 auto 25px;
-}
-
-.card-contato {
-    background-color: var(--card-bg);
-    color: var(--card-text);
-    border-radius: 30px;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-
-.texto-contato {
+    margin-left: -10px;
     flex: 1;
-    z-index: 1;
+    text-align: center;
+    font-size: small;
 }
 
-.texto-contato h3 {
-    font-size: 20px;
+/* =====================================================
+   CARD DE CONTATO (CTA)
+===================================================== */
+.card-contato {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 25px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Título do CTA */
+.titulo2 {
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.titulo2 img {
+    width: 75%;
+    margin-bottom: 10px;
+}
+
+/* Texto do contato */
+.texto-contato {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.texto-contato h2 {
+    font-size: 1rem;
+    line-height: 1.5;
     margin-bottom: 25px;
-    max-width: 300px;
 }
 
+/* Botão WhatsApp */
 .btn-whatsapp {
-    background-color: var(--bg-color);
+    background: #01426B;
     color: white;
     text-decoration: none;
-    padding: 8px 10px;
+
+    padding: 10px 16px;
+    min-height: 40px;
     border-radius: 50px;
+
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-size: 13px;
+    gap: 8px;
+
+    font-size: 0.85rem;
     font-weight: 600;
+
+    width: max-content;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    box-shadow: 0 6px 14px #01426B;
 }
 
 .btn-whatsapp img {
-    margin-left: 2px;
-    width: 18px;
+    width: 16px;
     height: auto;
+    flex-shrink: 0;
 }
 
+/* Avatar do contato */
 .contato-avatar {
-    width: 150px;
-    position: relative;
+    width: 90px;
+    flex-shrink: 0;
 }
 
 .contato-avatar img {
     width: 100%;
+    height: auto;
 }
 
+/* =====================================================
+   FOOTER
+===================================================== */
 footer {
-    margin-top: 50px;
-    padding-bottom: 20px;
-}
-
-footer p {
+    margin-top: 40px;
+    opacity: 0.7;
     font-size: 0.7rem;
 }
 
-/* Responsividade */
-@media (max-width: 400px) {
-    h1 {
-        font-size: 2rem;
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* =====================================================
+   ANIMAÇÃO DE BACKGROUND (FALLBACK CSS)
+===================================================== */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
     }
 
-    .cta-section h2 {
-        font-size: 1.5rem;
+    50% {
+        background-position: 100% 50%;
     }
 
-    .contact-card {
-        flex-direction: column;
-        text-align: center;
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    animation: gradientBG 15s ease infinite;
+    background-attachment: fixed;
+}
+
+/* =====================================================
+   RESPONSIVIDADE (MOBILE)
+===================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
     }
 
-    .contact-content h3 {
-        max-width: 100%;
+    .card-contato {
+        padding: 16px 18px;
+        gap: 12px;
     }
 
-    .contact-avatar {
-        margin-top: 20px;
+    .texto-contato h2 {
+        font-size: 0.95rem;
+    }
+
+    .contato-avatar {
+        width: 105px;
+    }
+
+    .descrição-link {
+        margin-left: -10px;
+        font-size: 0.9rem;
     }
 }
