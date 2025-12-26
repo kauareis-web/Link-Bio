@@ -16,7 +16,7 @@
 
 body {
     background-color: var(--bg-color);
-    background: linear-gradient(to top right, #066baa, #00446e, #00304E);
+    background: linear-gradient(to top right, #00446e, #00304E);
     color: var(--text-color);
     font-family: var(--font-main);
     display: flex;
@@ -94,14 +94,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 0px 0;
+    margin: 20px 0 30px;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     margin-bottom: 40px;
 }
 
@@ -109,7 +108,7 @@ header {
     background-color: var(--card-bg);
     color: var(--card-text);
     text-decoration: none;
-    padding: 12px 20px;
+    padding: 8px 10px;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -122,32 +121,33 @@ header {
     background-color: #f0f0f0;
 }
 
-.icon-circle {
-    width: 40px;
-    height: 40px;
-    border: 2px solid var(--card-text);
+.icon-link {
+    width: 35px;
+    height: auto;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: center;
     font-size: 0.7rem;
     font-weight: 900;
     text-transform: uppercase;
 }
 
-.icon-circle i {
-    font-size: 1.2rem;
+.descrição-link {
+    padding: 0 125px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cta-section h2 {
-    font-family: var(--font-title);
-    font-style: italic;
-    font-size: 2rem;
-    margin-bottom: 25px;
+.titulo2 {
+    width: 75%;
+    margin: 0 auto 25px;
 }
 
-.contact-card {
+.card-contato {
     background-color: var(--card-bg);
     color: var(--card-text);
     border-radius: 30px;
@@ -159,46 +159,43 @@ header {
     overflow: hidden;
 }
 
-.contact-content {
+.texto-contato {
     flex: 1;
     z-index: 1;
 }
 
-.contact-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    max-width: 200px;
+.texto-contato h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    max-width: 300px;
 }
 
 .btn-whatsapp {
     background-color: var(--bg-color);
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 8px 10px;
     border-radius: 50px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 700;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-.contact-avatar {
-    width: 100px;
+.btn-whatsapp img {
+    margin-left: 2px;
+    width: 18px;
+    height: auto;
+}
+
+.contato-avatar {
+    width: 150px;
     position: relative;
 }
 
-.contact-avatar img {
+.contato-avatar img {
     width: 100%;
-    border-radius: 50%;
-}
-
-.star-mini {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    font-size: 1.2rem;
-    color: var(--bg-color);
 }
 
 footer {
@@ -208,7 +205,6 @@ footer {
 
 footer p {
     font-size: 0.7rem;
-    opacity: 0.7;
 }
 
 /* Responsividade */
